@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/giohang.css">
+        <link rel="stylesheet" href="../css/footer2.css">
+        <script src="../js/js123.js"></script>
+        <script src="../js/GioHang.js"></script>
+        <script src="../js/cartJs.js"></script>
+        <script src="../js/SanPham.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../js/Inner_Phanloai.js"></script>
+        <script src = "../js/login.js"></script>
+        <script src="../js/DonHang.js"></script>
+        <script src="../js/Timkiem.js"></script>
+        <link rel="stylesheet" href="../icon/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+        <title>Zneakers</title>
+    </head>
+    <body>
+        <script> 
+            window.onload = function()
+            {
+            createProduct2();// js123
+            display();
+            productSale();
+            DisplayAccount();
+            create();
+            flag();//login.js
+            createUser();// Tao mảng người dùng
+            displayinfo();
+            }
+        </script>
+       <script src="../js/SanPham.js"></script>
+        <div class="wrapper">
+        <header class="header">
+            <div class="vuong">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-item-links header__nav-item-links-one" href="https://www.google.com/maps/dir/10.6944116,106.6409201/nike+store+tphcm/@10.7329427,106.6333711,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x31752f3da67b38d5:0x173ccef2ae6a5d44!2m2!1d106.6913589!2d10.7697512">Địa chỉ: <span>93-95 Đ. Nguyễn Trãi, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh </span></a></li>
+                </ul>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        Giỏ hàng
+                        <a class="header__nav-icon-links" href="GioHang.html?1" >
+                        <i class="header__nav-icon fas fa-cart-arrow-down"></i>
+                        </a>
+                    </li>
+                    <li class="header__nav-item" id="DangNhap"></li>
+                    <li class="header__nav-item" id="DangKy"></li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+
+        <div class="giohang" id="giohang">
+            <div class="giohang__image" id="giohang__image-id">
+            </div>
+            <div class="giohang__content" id="giohang__content-id">
+                <div class="giohang__content-item giohang__content-item-name" id="giohang__content-item-name-id"></div>
+                <div class="giohang__content-item giohang__content-item-gender" id="giohang__content-item-gender-id">dgd</div>
+                <div class="giohang__content-item giohang__content-item-price" id="giohang__content-item-price-id">vuong</div>
+                <div class="giohang__content-item giohang__content-item-soluongcon" id="giohang__content-item-soluongcon-id">vuong</div>
+                <div class="giohang__content-item giohang__content-item-SL" id="giohang__content-item-SL-id">
+                    <span>Số Lượng</span>
+                    <button onclick=GiamSL()><i class="fas fa-minus"></i></button>
+                    <input type="text" name="Soluong" value="1" id="SoLuongId" readonly>
+                    <button onclick=TangSL()><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="button-size">
+                    Size
+                    <button class="btn active" value="">37</button>
+                    <button class="btn" value="38" >38</button>
+                    <button class="btn"  value="39">39</button>
+                    <button class="btn"  value="40">40</button>
+                    <button class="btn"  value="41">41</button>
+                </div>
+                <script>
+                    var x= document.querySelector('.button-size');
+                    var buttons = x.querySelectorAll(".btn");
+                    for(i=0;i<buttons.length;i++)
+                    {
+                        buttons[i].addEventListener('click',function()
+                        {
+
+                            var current= document.getElementsByClassName('active');
+                            for(i=0;i<current.length;i++)
+                            {
+                             current[0].className=current[0].className.replace("active", "");
+                            }
+                        this.className +=" active";
+                        var x = document.getElementsByClassName("btn");
+                        for(i=0;i<x.length;i++)
+                        {
+                        x[i].style.color="black";
+                        console.log(x[i].value);
+                        }
+
+                        var x = document.getElementsByClassName("active");
+                        x[0].style.color='red';
+                        })
+                    }
+                </script>
+                <div id='Vuong3'>sfsf</div>
+                <div class="giohang__content-item giohang__content-item-detail" id="giohang__content-item-detail-id">
+                    <div id="giohang__content-item-detail-left"><a onclick="displaysize()">Bảng kích cỡ</a></div>
+                    <div id="giohang__content-item-detail-right"><a onclick="displayinfo()">Mô tả sản phẩm</a></div>
+                    <div id="giohang__content-item-displaydetail-id">áds</div>
+                </div>
+                <div class="giohang__content-item giohang__content-item-add" id="giohang__content-item-add-id">
+                </div>
+            </div>
+            <div class="giohang__close">
+                <button onclick=closeGioHang() ><i class="fas fa-times-circle"></i></button>
+            </div>
+        </div>
+        <div class="center">
+            <div>
+          <img src="../Logo1.png" alt="Logo">
+            </div>
+        </div> 
+
+        <!--Menu-->
+        <div class="menutop" id="menutop">
+            <div class="menutop__list">
+                <div class="menutop__list-item">
+                <a href="index.html?1">Trang chủ</a>
+                </div>
+                <div class="menutop__list-item menutop__list-item-sp" style="float:left"><a href=""> Sản phẩm</a>
+                    <div class="menutop__list-item-product">
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(1,'Nam')" style="color: black;">Giày nam</a></span>
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(2,'Nữ')" style="color: black;">Giày nữ</a></span>
+                        <span class="menutop__list-item-product-span"><a onclick="Phanloai(3,'kid')" style="color: black;">Giày kid</a></span>
+                    </div> 
+                </div>
+                
+                <div class="menutop__list-item" style="float: left;"><a href="Lienhe.html">Liên hệ</a> </div>
+                <div class="menutop__list-item" style="float: left;"><a href="Gioithieu.html">Giới thiệu</a></div>
+               <div class="menutop__search" style="float: left;margin-left :200px;">
+                <label for="timkiem"></label>
+                <input type="text" name="Timkiem" value="" id="timkiem" placeholder="Vui lòng nhập">
+                <button onclick="TimKiemSanPham()"><i class="fas fa-search"></i>Tìm kiếm</button>
+               </div>
+            </div>
+        </div>
+        <!--Product-->
+        <div class="content" id="content1">
+            <div class="image__introduce2" id="image__introduce-id2">
+                <img src="../pexels-photo-1895019.jpeg">
+            </div>
+            <div class="image__introduce" id="image__introduce-id">
+                <img src="../mau-thiet-ke-poster-quang-cao-giay-02.jpg">
+            </div>            
+            <div class="image__introduce-product-hot" id="image__introduce-id3">
+                <img src="../Sanphamhot.png">
+            </div>
+            <div class="content__wrapper" id="vuong">
+            </div>
+
+
+        </br>
+    </br>
+</br>
+        
+        </br>
+            <span class="span_button" id="span_button">
+            </span>
+        </br>
+    </br>
+</br>
+        
+        </br>
+            <span id="span_all">
+            </span>
+            <div id="div__arrow">
+            <span id="span__arrow">
+           </span>
+            </div>
+            <div class="image__introduce-product-sale" id="sale0">
+                <div style="float:left;width: 100px;position:absolute;"><img src="../sale.jfif"></div>
+               <div style="float: left; margin-left: 20px;"><img src="../GiamGia.png"></div>
+            </div>
+            <div class="content__wrapper" id="sale">
+            </div>
+            <span id="span_all2">
+            </span>
+        </div>
+    </br>
+</br>
+
+</br>
+</br>
+</br>
+</br>
+
+        <div class="footer__class" id="footer">
+           <div class="footer__class-image"> <img src="../Logo1.png" alt=""style="margin-top: 1em;"/>
+           </div>
+            <div class="footer__class-intro" id="foot_tools1">
+                <h2>ABOUT NIKE</h2>
+                <h2>LOCALTION</h2>
+                <h2>BECOME A MEMBER</h2>	
+                <h2>SEND US FEEDBACK</h2>
+            </div>
+            <div class="footer__class-intro2" id="foot_tools2">
+                <h2>GET HELP</h2>
+                <a>Order Status</a>
+                <a >Delivery</a>
+                <a>Returns</a>
+                <a>Paymentoptions</a>
+            </div>
+            <div class="footer__class-links">
+                <ul>
+                    <h2>CONTACT US</h2>
+                    <a href="https://www.facebook.com/nike" target="blank"><li><i class="fab fa-facebook"> </i>Facebook </li> </a>
+                    <a href="https://www.instagram.com/nike/" target="blank"><li><i class="fab fa-instagram"> </i>Instagram </li> </a>
+                    <a href="https://twitter.com/Nike" target="blank"><li><i class="fab fa-twitter"></i> Twitter</li> </a>
+                    <a href="https://www.youtube.com/user/nike"><li><i class="fas fa-newspaper"></i>New</li></a>
+                </ul>
+            </div>
+        </div>
+        </div>
+        <script src="../js/GioHang.js"></script>
+        
+    </body>
+</html>

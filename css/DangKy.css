@@ -1,0 +1,104 @@
+body{
+    font-size: 20px;
+}
+.wrapper__form
+{
+    width: 800px;
+    height: 530px;
+    background-image: linear-gradient(to top,rgb(83, 88, 90),rgb(218, 223, 224));
+    margin: auto;
+    border-radius: 8px;
+}
+.wrapper__form-top
+{
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    background-color: #111111;
+}
+.wrapper__form-top p{
+    color: #FFFFFF;
+}
+.wrapper__form-center
+{
+    height:410px;
+}
+.wrapper__form-center-left
+{
+    float: left;
+    width: 400px;
+    height:100%;
+}
+.wrapper__form-center-right
+{
+    float: left;
+    width: 400px;
+
+}
+.wrapper__form-center input
+{
+    display: block;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-align:center;
+    margin-left: 100px;
+}
+.wrapper__form-center input
+{
+    height: 20px;
+}
+label
+{
+    margin-top: 10px;
+   margin-left: 100px;
+   display: block;
+}
+#gender
+{
+    display: inline-block;
+    margin-left:100px;
+    margin-right:0px;
+}
+#genderr
+{
+    display: inline-block;
+    margin-left:0px;
+}
+.wrapper__form-bottom
+{
+    display: flex;
+    justify-content:right;
+    margin: 10px;
+}
+.wrapper__form-bottom div{
+    margin-right: 10px;
+}
+.wrapper__form-bottom-bottom{
+    text-align: center;
+    color: ;
+}
+span{
+    font-size: 13px;
+    color: rgb(226, 38, 38);
+}
+button
+{
+    margin-right: 10px;
+    background-color: #111111;
+}
+.wrapper__form-bottom-right input
+{
+    height: 30px;
+    width: 50px;
+    background-color: #111111;
+}
+.wrapper__form-bottom-bottom a{    
+    color: #111111;
+}
+.wrapper__form-bottom-bottom a{
+    margin-left: 20px;
+} 
+.wrapper__form-bottom-left button{
+    margin-top: 17px;
+}
